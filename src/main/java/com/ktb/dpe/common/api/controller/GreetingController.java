@@ -1,4 +1,4 @@
-package com.ktb.dpe.common.api.controller;
+package com.conq.rest.common.api.controller;
 
 import com.ktb.dpe.common.api.business.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;
