@@ -1,4 +1,4 @@
-package com.ktb.dpe.common.api.business;
+package com.conq.rest.common.api.business;
 
 import lombok.Data;
 
