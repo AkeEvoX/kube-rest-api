@@ -1,0 +1,35 @@
+#### script service create
+apiVersion: v1
+kind: service
+metadata:
+  name: kube-rest-api-service
+spec:
+  type:NodePort
+  selector:
+    app: kube-rest-api-app
+  ports:
+    - protocol: TCP
+      port: 9101
+      targetPort: 9101
+#### script deployment create
+apiVerions: apps/v1
+kind: Deployment
+metadata:
+  name: kube-rest-api-deployment
+  lables:
+    app: kube-rest-api-app
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: kube-rest-api-app
+  template:
+    metadata:
+      labels:
+        app: kube-rest-api-app
+    spec:
+      containers:
+        - name: nginx
+          image: dpe/kube-rest-api-app
+          ports:
+            - containerPort: 80
